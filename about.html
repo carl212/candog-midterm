@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #081b29;
+            color: white;
+            margin: 0;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 5%;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .navbar a {
+            font-size: 18px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 20px;
+            transition: .3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: blue;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            margin-top: 200px;
+        }
+
+        h1 {
+            color: #f8f7f7;
+            font-size: 25px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .profile-picture {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .profile-picture img {
+            border-radius: 50%;
+            width: 200px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-picture:hover img {
+            transform: scale(1.1);
+        }
+
+        .shine-animation {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shine-animation::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: rotate(45deg);
+            animation: shine 1s forwards;
+        }
+
+        @keyframes shine {
+            0% {
+                top: -100%;
+                left: -100%;
+            }
+            100% {
+                top: 150%;
+                left: 150%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo" id="logo">carlbert</a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="contact.html">Contacts</a>
+            <a href="portfolio.html">Portfolio</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="profile-picture">
+            <img id="profile-img" src="candog.png" alt="Your Profile Picture">
+        </div>
+        <div class="content shine-animation">
+            <h1>Hello there! 👋 I'm Carlbert Candog, 
+                I'm a tech enthusiast who specializes in changing operating systems on phones, diving into new versions and customizing mobile software. Curious about altering your phone's OS or just want to geek out about tech? Feel free to reach out!</h1>
+
+            <h2>Web Wizard:</h2>
+            <p>As a skilled web designer, I wield the power of Laravel and React JS to sculpt immersive digital landscapes. From sleek and intuitive user interfaces to seamless backend functionalities, I pride myself on creating web experiences that not only captivate but also engage.</p>
+            <h2>Let's Connect:</h2>
+            <p>If you're looking for someone who can breathe life into your digital dreams or collaborate on exciting projects, I'd love to connect! Feel free to reach out, and let's embark on a journey to create something truly extraordinary together.</p>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="https://drive.google.com/drive/folders/103uTeY8N-gp6suIT8AU-kzrdIIUO9HhC?usp=drive_link" target="_blank" style="text-decoration: none; background-color: blue; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">Download my CV</a>
+    </div>
+
+    <script>
+   
+        function applyRandomAnimation() {
+            const logo = document.getElementById('logo');
+            const animations = ['animate__fadeIn', 'animate__slideInLeft', 'animate__slideInRight', 'animate__rotateIn', 'animate__zoomIn'];
+            const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+            logo.classList.add('animate__animated', randomAnimation);
+        }
+
+ 
+        document.addEventListener('DOMContentLoaded', () => {
+            applyRandomAnimation();
+        });
+    </script>
+</body>
+</html>

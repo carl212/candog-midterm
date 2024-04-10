@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My personal Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        #typed-text {
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+        }
+
+        .home-content {
+            position: relative; 
+            text-align: center; 
+        }
+
+        .animate-p {
+            animation: fadeIn 1.5s ease-out forwards; 
+        }
+
+        .btn-box {
+            position: absolute;
+            right: -10px; 
+            top: 100%; 
+            transform: translateY(-50%);
+        }
+
+        .social a {
+            opacity: 0; 
+        }
+
+        
+        .logo {
+            animation: scaleAnimation 1s ease forwards; 
+        }
+
+        @keyframes scaleAnimation {
+            from {
+                transform: scale(0.9); 
+            }
+            to {
+                transform: scale(1); 
+            }
+        }
+    </style>
+</head>
+<body>
+   <header class="header">
+       <a href="#" class="logo">carlbert</a>
+       <nav class="navbar">
+          <a href="#" class="active">Home</a>
+          <a href="about.html">About</a> 
+          <a href="contact.html">Contacts</a> 
+          <a href="portfolio.html">Portfolio</a> 
+       </nav>
+   </header>
+   <section class="home">
+       <div class="home-content">
+           <h1 id="animated-text">Hi, I'm Carlbert Candog</h1>
+           <h3 id="typed-text"></h3>
+           <p id="animated-p">"I'm a versatile digital creator proficient in Blender, Photoshop, React.js, and javascript, 
+            passionate about bringing imaginative ideas to life through compelling visuals and seamless user experiences."</p>
+           <div class="btn-box">
+               <a href="about.html">hire me</a>
+               <a href="contact.html">let's talk</a>
+           </div>
+       </div>
+       <div class="social">
+           <a href="https://www.facebook.com/carlberts.candog?mibextid=ZbWKwL"><i class='bx bxl-facebook-circle'></i></a>
+           <a href="https://www.instagram.com/carlbertcandog?igsh=NHpueDlwdmQ0MzIw
+
+           "><i class='bx bxl-instagram'></i></a>
+           <a href="https://mail.google.com/chat/u/0/#chat/dm/-kePRUAAAAE"><i class='bx bx-chat'></i></a>
+       </div>
+   </section>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+   <script>
+       
+       anime({
+           targets: '#animated-text',
+           translateX: [-100, 0], 
+           opacity: [0, 1], 
+           easing: 'easeOutExpo', 
+           duration: 1500, 
+           delay: 500 
+       });
+
+ 
+       const text = document.getElementById('typed-text');
+       const words = ['web designer'];
+       let i = 0;
+       let timer;
+
+       function typeWriter() {
+           if (i < words[0].length) {
+               text.textContent += words[0].charAt(i);
+               i++;
+               timer = setTimeout(typeWriter, 400); 
+           } else {
+               
+               i = 0;
+               text.textContent = '';
+               timer = setTimeout(typeWriter, 200); 
+           }
+       }
+
+       typeWriter();
+
+       
+       const p = document.getElementById('animated-p');
+       p.classList.add('animate-p');
+
+       
+       anime({
+           targets: '.btn-box',
+           translateX: [-80, 0], 
+           opacity: [0, 1], 
+           easing: 'easeOutExpo', 
+           duration: 1500, 
+           delay: .5 
+       });
+
+      
+       anime({
+           targets: '.social a',
+           opacity: [0, 1], 
+           easing: 'easeOutExpo', 
+           duration: 1500, 
+           delay: anime.stagger(100) 
+       });
+   </script>
+</body>
+</html>

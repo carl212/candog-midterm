@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #081b29;
+            color: white;
+            margin: 0;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 5%;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .navbar a {
+            font-size: 18px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 20px;
+            transition: .3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: blue;
+        }
+
+        .contact {
+            background: #081b29;
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-content h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .contact-content p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .contact-buttons a {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-right: 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+            background-color: #00abf0;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-buttons a:last-child {
+            margin-right: 0;
+        }
+
+        .contact-buttons a:hover {
+            background-color: #007cad;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <a href="#" class="logo" id="logo">carlbert</a>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="portfolio.html">Portfolio</a>
+    </nav>
+</header>
+
+<section class="contact">
+    <div class="contact-content">
+        <h1>Contact Me</h1>
+        <p>For any inquiries or feedback, feel free to reach out to us using the form below:</p>
+        <p>@ Google chat : candog.carlbert@cec.edu.ph</p>
+        <p>@ Messenger : candog.carlbert@cec.edu.ph</p>
+    </div>
+    
+   
+    <div class="contact-buttons">
+        <a href="https://m.me/yourpage" target="_blank">Messenger</a>
+        <a href="https://chat.google.com" target="_blank">Google Chat</a>
+    </div>
+</section>
+
+<script>
+   
+    function applyRandomAnimation(element) {
+        const animations = ['animate__fadeIn', 'animate__slideInLeft', 'animate__slideInRight', 'animate__rotateIn', 'animate__zoomIn'];
+        const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+        element.classList.add('animate__animated', randomAnimation);
+    }
+
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const logo = document.getElementById('logo');
+        applyRandomAnimation(logo);
+
+        const navbarLinks = document.querySelectorAll('.navbar a');
+        navbarLinks.forEach(link => {
+            applyRandomAnimation(link);
+        });
+    });
+</script>
+</body>
+</html>

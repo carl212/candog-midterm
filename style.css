@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #081b29;
+    color: white;
+    margin: 0; 
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%; 
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a{
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active{ 
+    color: blue;
+}
+
+.home{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 5%; 
+    position: relative;
+}
+
+.home-content{
+    max-width: 600px;
+    margin-top: 200px;
+    margin-right: auto; 
+    margin-left: auto; 
+    text-align: center; 
+}
+
+.home-content h1{
+    font-size: 32px; 
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.home-content h3{
+    font-size: 35px; 
+    font-weight: 700;
+    color: aquamarine;
+    margin-top: -35px;
+}
+
+ .home-content p {
+            margin-top: 100px; 
+        }
+
+.btn-box{
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px;
+}
+
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0 10px; 
+}
+
+.btn-box a:nth-child(2) {
+    background: transparent;
+    color: #00abf0;
+}
+
+.social{
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color:aqua;
+    text-decoration: none;
+}
+
+.profile-picture {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 210px; 
+    margin-right: 180px; 
+}
+
+.profile-picture img {
+    width: 300px; 
+    height: auto;
+    border-radius: 50%; 
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 20px 5%;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .navbar a {
+        margin: 10px 0;
+    }
+    
+    .home {
+        padding: 80px 5%;
+    }
+    
+    .home-content h1 {
+        font-size: 32px;
+    }
+    
+    .home-content h3 {
+        font-size: 24px;
+    }
+    
+    .home-content p {
+        font-size: 14px;
+    }
+    
+    .btn-box {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+    
+    .btn-box a {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    
+    .social {
+        width: 100%;
+        justify-content: center;
+    }
+}

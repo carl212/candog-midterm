@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #081b29;
+            color: white;
+            margin: 0;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 5%;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .navbar a {
+            font-size: 18px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 20px;
+            transition: .3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: blue;
+        }
+
+        .portfolio {
+            background: #081b29;
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .portfolio-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-content h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-content p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .portfolio-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .portfolio-item {
+            width: calc(33.333% - 20px);
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .portfolio-item h3 {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .portfolio-item p {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #ccc;
+        }
+
+        .portfolio-item a {
+            display: block;
+            text-decoration: none;
+            color: #00abf0;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">carlbert</a>
+        <nav class="navbar">
+            <a href="index.html" >Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="portfolio.html" class="active">Portfolio</a> 
+        </nav>
+    </header>
+
+    <section class="portfolio">
+        <div class="portfolio-content">
+            <h2>Portfolio</h2>
+            <p>Here's some of my works</p>
+            <div class="portfolio-items">
+                
+                <div class="portfolio-item">
+                    <img src="midtermCandogwindows open.png" alt="Portfolio Item 1">
+                    <h3>Room Isometric</h3>
+                    <p>Making a room from Blender</p>
+                    <a href="https://drive.google.com/drive/folders/1klTercGev-q-EckZRxKqveeuY-O3xHK9?usp=drive_link">View Details</a>
+                </div>
+                <div class="portfolio-item">
+                    <video controls>
+                        <source src="new_orleans.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3>Activity</h3>
+                    <p>My first activity in Blender</p>
+                    <a href="#">View Details</a>
+                </div>
+                <div class="portfolio-item">
+                    <img src="android.jpg" alt="Portfolio Item 3">
+                    <h3>Custom ROM</h3>
+                    <p>Putting a custom ROM and kernel in your phone to update to the latest Android versions</p>
+                    <a href="https://xdaforums.com/search/71020392/?q=custom+rom&o=relevance">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+     
+        function applyAnimation(element) {
+            const animations = ['animate__fadeIn', 'animate__slideInLeft', 'animate__slideInRight', 'animate__rotateIn', 'animate__zoomIn'];
+            const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+            element.classList.add('animate__animated', randomAnimation);
+        }
+
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbarLinks = document.querySelectorAll('.navbar a');
+            const logo = document.querySelector('.logo');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            navbarLinks.forEach(link => applyAnimation(link));
+            applyAnimation(logo);
+            portfolioItems.forEach(item => applyAnimation(item));
+        });
+    </script>
+</body>
+</html>
