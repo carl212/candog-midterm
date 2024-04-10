@@ -35,9 +35,12 @@
             opacity: 0; 
         }
 
-        
         .logo {
             animation: scaleAnimation 1s ease forwards; 
+        }
+
+        .header {
+            opacity: 0; /* Initially hide the header */
         }
 
         @keyframes scaleAnimation {
@@ -48,10 +51,19 @@
                 transform: scale(1); 
             }
         }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
-   <header class="header">
+   <header class="header" id="header">
        <a href="#" class="logo">carlbert</a>
        <nav class="navbar">
           <a href="#" class="active">Home</a>
@@ -73,15 +85,12 @@
        </div>
        <div class="social">
            <a href="https://www.facebook.com/carlberts.candog?mibextid=ZbWKwL"><i class='bx bxl-facebook-circle'></i></a>
-           <a href="https://www.instagram.com/carlbertcandog?igsh=NHpueDlwdmQ0MzIw
-
-           "><i class='bx bxl-instagram'></i></a>
+           <a href="https://www.instagram.com/carlbertcandog?igsh=NHpueDlwdmQ0MzIw"><i class='bx bxl-instagram'></i></a>
            <a href="https://mail.google.com/chat/u/0/#chat/dm/-kePRUAAAAE"><i class='bx bx-chat'></i></a>
        </div>
    </section>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
    <script>
-       
        anime({
            targets: '#animated-text',
            translateX: [-100, 0], 
@@ -91,7 +100,6 @@
            delay: 500 
        });
 
- 
        const text = document.getElementById('typed-text');
        const words = ['web designer'];
        let i = 0;
@@ -103,7 +111,6 @@
                i++;
                timer = setTimeout(typeWriter, 400); 
            } else {
-               
                i = 0;
                text.textContent = '';
                timer = setTimeout(typeWriter, 200); 
@@ -112,11 +119,9 @@
 
        typeWriter();
 
-       
        const p = document.getElementById('animated-p');
        p.classList.add('animate-p');
 
-       
        anime({
            targets: '.btn-box',
            translateX: [-80, 0], 
@@ -126,13 +131,18 @@
            delay: .5 
        });
 
-      
        anime({
            targets: '.social a',
            opacity: [0, 1], 
            easing: 'easeOutExpo', 
            duration: 1500, 
            delay: anime.stagger(100) 
+       });
+
+       
+       document.addEventListener('DOMContentLoaded', () => {
+           const header = document.getElementById('header');
+           header.style.opacity = 1; 
        });
    </script>
 </body>

@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
-       
         * {
             margin: 0;
             padding: 0;
@@ -39,6 +38,11 @@
             color: #ededed;
             text-decoration: none;
             font-weight: 600;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
         }
 
         .navbar a {
@@ -124,6 +128,48 @@
             font-weight: bold;
             margin-top: 10px;
         }
+
+        @media screen and (max-width: 768px) {
+            .header {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 20px;
+            }
+
+            .navbar a {
+                margin: 10px 0;
+            }
+
+            .portfolio-content {
+                padding: 50px 10px;
+            }
+
+            .portfolio-item {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .navbar {
+                margin-top: 10px;
+            }
+
+            .portfolio-content {
+                padding: 40px 10px;
+            }
+
+            .portfolio-item {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -142,7 +188,6 @@
             <h2>Portfolio</h2>
             <p>Here's some of my works</p>
             <div class="portfolio-items">
-                
                 <div class="portfolio-item">
                     <img src="midtermCandogwindows open.png" alt="Portfolio Item 1">
                     <h3>Room Isometric</h3>
@@ -169,14 +214,12 @@
     </section>
 
     <script>
-     
         function applyAnimation(element) {
             const animations = ['animate__fadeIn', 'animate__slideInLeft', 'animate__slideInRight', 'animate__rotateIn', 'animate__zoomIn'];
             const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
             element.classList.add('animate__animated', randomAnimation);
         }
 
-        
         document.addEventListener('DOMContentLoaded', () => {
             const navbarLinks = document.querySelectorAll('.navbar a');
             const logo = document.querySelector('.logo');

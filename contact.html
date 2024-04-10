@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
-        
         * {
             margin: 0;
             padding: 0;
@@ -39,6 +38,11 @@
             color: #ededed;
             text-decoration: none;
             font-weight: 600;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
         }
 
         .navbar a {
@@ -76,7 +80,7 @@
         .contact-content p {
             font-size: 16px;
             line-height: 1.5;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .contact-buttons {
@@ -104,52 +108,105 @@
         .contact-buttons a:hover {
             background-color: #007cad;
         }
+
+        @media screen and (max-width: 768px) {
+            .header {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 20px;
+            }
+
+            .navbar a {
+                margin: 10px 0;
+            }
+
+            .contact-content {
+                padding: 0 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .header {
+                padding: 10px 5%;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .navbar a {
+                font-size: 14px;
+            }
+
+            .contact-content h1 {
+                font-size: 28px;
+            }
+
+            .contact-content p {
+                font-size: 14px;
+            }
+
+            .contact-buttons a {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
-<header class="header">
-    <a href="#" class="logo" id="logo">carlbert</a>
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html" class="active">Contact</a>
-        <a href="portfolio.html">Portfolio</a>
-    </nav>
-</header>
+    <header class="header" id="header">
+        <a href="#" class="logo" id="logo">carlbert</a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active">Contact</a>
+            <a href="portfolio.html">Portfolio</a>
+        </nav>
+    </header>
 
-<section class="contact">
-    <div class="contact-content">
-        <h1>Contact Me</h1>
-        <p>For any inquiries or feedback, feel free to reach out to us using the form below:</p>
-        <p>@ Google chat : candog.carlbert@cec.edu.ph</p>
-        <p>@ Messenger : candog.carlbert@cec.edu.ph</p>
-    </div>
-    
-   
-    <div class="contact-buttons">
-        <a href="https://m.me/yourpage" target="_blank">Messenger</a>
-        <a href="https://chat.google.com" target="_blank">Google Chat</a>
-    </div>
-</section>
+    <section class="contact">
+        <div class="contact-content">
+            <h1>Contact Me</h1>
+            <p>For any inquiries or feedback, feel free to reach out to us using the form below:</p>
+            <p>@ Google chat : candog.carlbert@cec.edu.ph</p>
+            <p>@ Messenger : candog.carlbert@cec.edu.ph</p>
+        </div>
 
-<script>
-   
-    function applyRandomAnimation(element) {
-        const animations = ['animate__fadeIn', 'animate__slideInLeft', 'animate__slideInRight', 'animate__rotateIn', 'animate__zoomIn'];
-        const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
-        element.classList.add('animate__animated', randomAnimation);
-    }
+        <div class="contact-buttons">
+            <a href="https://m.me/yourpage" target="_blank">Messenger</a>
+            <a href="https://chat.google.com" target="_blank">Google Chat</a>
+        </div>
+    </section>
 
-    
-    document.addEventListener('DOMContentLoaded', () => {
-        const logo = document.getElementById('logo');
-        applyRandomAnimation(logo);
+    <script>
+        function applyRandomAnimation(element) {
+            const animations = ['animate__fadeIn', 'animate__slideInLeft', 'animate__slideInRight', 'animate__rotateIn', 'animate__zoomIn'];
+            const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+            element.classList.add('animate__animated', randomAnimation);
+        }
 
-        const navbarLinks = document.querySelectorAll('.navbar a');
-        navbarLinks.forEach(link => {
-            applyRandomAnimation(link);
+        document.addEventListener('DOMContentLoaded', () => {
+            const logo = document.getElementById('logo');
+            const header = document.getElementById('header');
+            const contactSection = document.querySelector('.contact');
+            const contactButtons = document.querySelectorAll('.contact-buttons a');
+
+            applyRandomAnimation(logo);
+            applyRandomAnimation(header);
+            applyRandomAnimation(contactSection);
+
+            contactButtons.forEach(button => {
+                applyRandomAnimation(button);
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
